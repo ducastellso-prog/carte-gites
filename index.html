@@ -1,79 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <title>Carte des gîtes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<title>Carte Gîtes & Centres d’intérêt</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Leaflet -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-  <style>
-    body, html { margin: 0; padding: 0; height: 100%; }
-    #map { height: 100%; }
-    .marker-number {
-      background: #2e7d32;
-      color: white;
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      border: 2px solid white;
-      box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    }
-  </style>
+<style>
+html, body { height: 100%; margin: 0; }
+#map { height: 100%; }
+
+.marker-number, .marker-letter {
+  background: #2e7d32;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.marker-letter {
+  background: #1565c0;
+}
+
+.marker-charden {
+  font-size: 28px;
+}
+</style>
 </head>
 
 <body>
 <div id="map"></div>
 
-<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-  const map = L.map('map').setView([45.6, 3.1], 8);
+const map = L.map('map').setView([45.63, 3.30], 8);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
-  }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
 
-  const gites = [
-    { n: 1,  lat: 45.197, lon: 2.827, url: "https://www.gites-de-france.com/fr/auvergne-rhone-alpes/cantal/456-15g456" },
-    { n: 2,  lat: 45.631, lon: 3.553, url: "https://www.gites-de-france.com/fr/auvergne-rhone-alpes/puy-de-dome/les-collanges-63g1953" },
-    { n: 3,  lat: 45.395, lon: 2.703, url: "https://www.gites-de-france.com/fr/auvergne-rhone-alpes/cantal/la-boria-de-peire-15g59" },
-    { n: 4,  lat: 45.773, lon: 3.004, url: "https://www.grandsgites.com/gite-63-cantou-auvergnat-4601.htm" },
-    { n: 5,  lat: 45.035, lon: 3.884, url: "https://www.grandsgites.com/gite-43-chaponie-1782.htm" },
-    { n: 6,  lat: 44.904, lon: 3.842, url: "https://www.grandsgites.com/gite-43-estaou-2399.htm" },
-    { n: 7,  lat: 45.693, lon: 3.759, url: "https://www.grandsgites.com/gite-63-pacher-vye-4556.htm" },
-    { n: 8,  lat: 45.756, lon: 3.676, url: "https://www.grandsgites.com/gite-63-bergerie-troulier-3068.htm" },
-    { n: 9,  lat: 45.784, lon: 2.815, url: "https://www.grandsgites.com/gite-63-lepetit-sabotier-5579.htm" },
-    { n: 10, lat: 45.771, lon: 3.023, url: "https://www.grandsgites.com/gite-63-frenes-fleurs-7156.htm" },
-    { n: 11, lat: 45.812, lon: 3.022, url: "https://www.grandsgites.com/gite-63-feniere-1819.htm" },
-    { n: 12, lat: 45.110, lon: 2.628, url: "https://www.airbnb.fr/rooms/8244289" },
-    { n: 13, lat: 45.521, lon: 2.932, url: "https://www.airbnb.fr/rooms/1322462489793256482" },
-    { n: 14, lat: 45.663, lon: 3.091, url: "https://www.airbnb.fr/rooms/1346954564102024096" },
-    { n: 15, lat: 45.578, lon: 2.973, url: "https://www.airbnb.fr/rooms/866648438045585667" },
-    { n: 16, lat: 45.553, lon: 2.878, url: "https://www.airbnb.fr/rooms/628673188255053132" }
-  ];
+/* ===== GÎTES ===== */
+const gites = [
+ {n:1, lat:45.197, lon:2.827, url:"https://www.gites-de-france.com/fr/auvergne-rhone-alpes/cantal/456-15g456"},
+ {n:2, lat:45.631, lon:3.553, url:"https://www.gites-de-france.com/fr/auvergne-rhone-alpes/puy-de-dome/les-collanges-63g1953"},
+ {n:3, lat:45.395, lon:2.703, url:"https://www.gites-de-france.com/fr/auvergne-rhone-alpes/cantal/la-boria-de-peire-15g59"},
+ {n:4, lat:45.773, lon:3.004, url:"https://www.grandsgites.com/gite-63-cantou-auvergnat-4601.htm"},
+ {n:5, lat:45.035, lon:3.884, url:"https://www.grandsgites.com/gite-43-chaponie-1782.htm"},
+ {n:6, lat:44.904, lon:3.842, url:"https://www.grandsgites.com/gite-43-estaou-2399.htm"},
+ {n:7, lat:45.693, lon:3.759, url:"https://www.grandsgites.com/gite-63-pacher-vye-4556.htm"},
+ {n:8, lat:45.756, lon:3.676, url:"https://www.grandsgites.com/gite-63-bergerie-troulier-3068.htm"},
+ {n:9, lat:45.784, lon:2.815, url:"https://www.grandsgites.com/gite-63-lepetit-sabotier-5579.htm"},
+ {n:10,lat:45.771, lon:3.023, url:"https://www.grandsgites.com/gite-63-frenes-fleurs-7156.htm"},
+ {n:11,lat:45.812, lon:3.022, url:"https://www.grandsgites.com/gite-63-feniere-1819.htm"},
+ {n:12,lat:45.110, lon:2.628, url:"https://www.airbnb.fr/rooms/8244289"},
+ {n:13,lat:45.521, lon:2.932, url:"https://www.airbnb.fr/rooms/1322462489793256482"},
+ {n:14,lat:45.663, lon:3.091, url:"https://www.airbnb.fr/rooms/1346954564102024096"},
+ {n:15,lat:45.578, lon:2.973, url:"https://www.airbnb.fr/rooms/866648438045585667"},
+ {n:16,lat:45.553, lon:2.878, url:"https://www.airbnb.fr/rooms/628673188255053132"}
+];
 
-  gites.forEach(g => {
-    const icon = L.divIcon({
-      className: '',
-      html: `<div class="marker-number">${g.n}</div>`,
-      iconSize: [32, 32],
-      iconAnchor: [16, 32]
-    });
+gites.forEach(g => {
+  L.marker([g.lat, g.lon], {
+    icon: L.divIcon({
+      html:`<div class="marker-number">${g.n}</div>`,
+      iconSize:[32,32],
+      iconAnchor:[16,32]
+    })
+  }).addTo(map)
+    .bindPopup(`<strong>Gîte ${g.n}</strong><br><a href="${g.url}" target="_blank">Voir le gîte</a>`);
+});
 
-    L.marker([g.lat, g.lon], { icon })
-      .addTo(map)
-      .bindPopup(`<strong>Gîte ${g.n}</strong><br><a href="${g.url}" target="_blank">Voir le gîte</a>`);
-  });
+/* ===== CENTRES D’INTÉRÊT ===== */
+const sites = [
+ {l:"A", name:"Lac Chambon", lat:45.572, lon:2.896, url:"https://www.sancy.com/lacs-et-rivieres/lac-chambon/"},
+ {l:"B", name:"Vulcania", lat:45.807, lon:3.045, url:"https://www.vulcania.com"},
+ {l:"C", name:"Puy de Dôme", lat:45.772, lon:2.964, url:"https://www.puy-de-dome.fr"},
+ {l:"D", name:"Château de Murol", lat:45.582, lon:2.896, url:"https://murol.fr"},
+ {l:"E", name:"Lac Pavin", lat:45.497, lon:2.890, url:"https://www.sancy.com/lacs-et-rivieres/lac-pavin/"}
+];
+
+sites.forEach(s => {
+  L.marker([s.lat, s.lon], {
+    icon: L.divIcon({
+      html:`<div class="marker-letter">${s.l}</div>`,
+      iconSize:[32,32],
+      iconAnchor:[16,32]
+    })
+  }).addTo(map)
+    .bindPopup(`<strong>${s.l} – ${s.name}</strong><br><a href="${s.url}" target="_blank">Infos</a>`);
+});
+
+/* ===== BILL0M – CHARDEN ===== */
+L.marker([45.723, 3.338], {
+  icon: L.divIcon({
+    html: "👩",
+    className: "marker-charden",
+    iconSize: [30,30],
+    iconAnchor: [15,30]
+  })
+}).addTo(map)
+  .bindPopup("<strong>Billom</strong><br>Chez Charden ❤️");
+
 </script>
 </body>
 </html>
