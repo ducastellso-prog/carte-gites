@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+
+function numeroIcon(numero, couleur) {
+    return L.divIcon({
+        className: "numero-gite",
+        html: `<div style="
+            background:${couleur};
+            color:white;
+            width:28px;
+            height:28px;
+            border-radius:50%;
+            text-align:center;
+            line-height:28px;
+            font-weight:bold;
+            font-size:14px;
+            border:2px solid white;
+            ">${numero}</div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14]
+    });
+}
+
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_68aa9f95a90180762b8ebc7ebf5d88b8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+
+<style>
+.numero-gite {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+</style>
+
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_68aa9f95a90180762b8ebc7ebf5d88b8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_68aa9f95a90180762b8ebc7ebf5d88b8 = L.map(
+                "map_68aa9f95a90180762b8ebc7ebf5d88b8",
+                {
+                    center: [45.45, 3.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 8,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3e13c2e08263172cf895cc9ae610ab0f = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_68aa9f95a90180762b8ebc7ebf5d88b8);
+        
+    
+            var marker_3fc65bebb69873e46a0976e9734af58f = L.marker(
+                [45.723, 3.056],
+                {}
+            ).addTo(map_68aa9f95a90180762b8ebc7ebf5d88b8);
+        
+    
+            var icon_7bdf3bc3e1b2c9d059b74d2f231f3a9c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "female", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_3fc65bebb69873e46a0976e9734af58f.setIcon(icon_7bdf3bc3e1b2c9d059b74d2f231f3a9c);
+        
+    
+        var popup_1bb47aab1cfee86ffe9e8a1a47a3ae18 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_13cad1cc759a80931d905003d44bfa20 = $(`<div id="html_13cad1cc759a80931d905003d44bfa20" style="width: 100.0%; height: 100.0%;">Billom</div>`)[0];
+            popup_1bb47aab1cfee86ffe9e8a1a47a3ae18.setContent(html_13cad1cc759a80931d905003d44bfa20);
+        
+
+        marker_3fc65bebb69873e46a0976e9734af58f.bindPopup(popup_1bb47aab1cfee86ffe9e8a1a47a3ae18)
+        ;
+
+        
+    
+    
+            var feature_group_fdd8173360c8a39265bca94dd273b2b3 = L.featureGroup(
+                {}
+            ).addTo(map_68aa9f95a90180762b8ebc7ebf5d88b8);
+        
+    
+            var marker_27632d5ba3902ea1499b92aa7603ba64 = L.marker(
+                [45.10833, 2.89722],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_27632d5ba3902ea1499b92aa7603ba64.setIcon(numeroIcon(1, "green"));
+        
+    
+        var popup_cdc53c0dd8b87ab8183e7934f97d7fab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_070f6ebcd2f93392fb803b39bd309b4b = $(`<div id="html_070f6ebcd2f93392fb803b39bd309b4b" style="width: 100.0%; height: 100.0%;">Gîte 1 – La Chapelle-d'Alagnon (15)</div>`)[0];
+            popup_cdc53c0dd8b87ab8183e7934f97d7fab.setContent(html_070f6ebcd2f93392fb803b39bd309b4b);
+        
+
+        marker_27632d5ba3902ea1499b92aa7603ba64.bindPopup(popup_cdc53c0dd8b87ab8183e7934f97d7fab)
+        ;
+
+        
+    
+    
+            var marker_4bbcb1cbc9345a519ad278103ff7c047 = L.marker(
+                [45.733, 3.216],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_4bbcb1cbc9345a519ad278103ff7c047.setIcon(numeroIcon(2, "blue"));
+        
+    
+        var popup_529c9a05f5a004ee77e1592d121b1c3f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3e4b29a42644fa93faae189e69fc342d = $(`<div id="html_3e4b29a42644fa93faae189e69fc342d" style="width: 100.0%; height: 100.0%;">Gîte 2 – Cunlhat (63)</div>`)[0];
+            popup_529c9a05f5a004ee77e1592d121b1c3f.setContent(html_3e4b29a42644fa93faae189e69fc342d);
+        
+
+        marker_4bbcb1cbc9345a519ad278103ff7c047.bindPopup(popup_529c9a05f5a004ee77e1592d121b1c3f)
+        ;
+
+        
+    
+    
+            var marker_24f7e850c970a11d9594c8baacb15cdf = L.marker(
+                [45.116, 2.776],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_24f7e850c970a11d9594c8baacb15cdf.setIcon(numeroIcon(3, "green"));
+        
+    
+        var popup_86e9d03355efb5aa06aa2c6d1d293a00 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_357d5cca39d82edc2e25c6d32b348e42 = $(`<div id="html_357d5cca39d82edc2e25c6d32b348e42" style="width: 100.0%; height: 100.0%;">Gîte 3 – Condat / Réghéat (15)</div>`)[0];
+            popup_86e9d03355efb5aa06aa2c6d1d293a00.setContent(html_357d5cca39d82edc2e25c6d32b348e42);
+        
+
+        marker_24f7e850c970a11d9594c8baacb15cdf.bindPopup(popup_86e9d03355efb5aa06aa2c6d1d293a00)
+        ;
+
+        
+    
+    
+            var marker_aa6fe42f807be69a1fad166356720a98 = L.marker(
+                [45.46667, 2.78333],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_aa6fe42f807be69a1fad166356720a98.setIcon(numeroIcon(4, "blue"));
+        
+    
+        var popup_ce2da0bb085181132156a40e1f25f977 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b0f5567f4f891015a69f19a7d2ddc769 = $(`<div id="html_b0f5567f4f891015a69f19a7d2ddc769" style="width: 100.0%; height: 100.0%;">Gîte 4 – Picherande (63)</div>`)[0];
+            popup_ce2da0bb085181132156a40e1f25f977.setContent(html_b0f5567f4f891015a69f19a7d2ddc769);
+        
+
+        marker_aa6fe42f807be69a1fad166356720a98.bindPopup(popup_ce2da0bb085181132156a40e1f25f977)
+        ;
+
+        
+    
+    
+            var marker_3e02b5b689f1a3e9ff9972fdcc5fe625 = L.marker(
+                [45.16, 3.86],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_3e02b5b689f1a3e9ff9972fdcc5fe625.setIcon(numeroIcon(5, "orange"));
+        
+    
+        var popup_a6c0e6211b340247f11ba85e2d11d2c8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aece5c4974005bec4de37584057bfa34 = $(`<div id="html_aece5c4974005bec4de37584057bfa34" style="width: 100.0%; height: 100.0%;">Gîte 5 – St-Christophe-sur-Dolaizon (43)</div>`)[0];
+            popup_a6c0e6211b340247f11ba85e2d11d2c8.setContent(html_aece5c4974005bec4de37584057bfa34);
+        
+
+        marker_3e02b5b689f1a3e9ff9972fdcc5fe625.bindPopup(popup_a6c0e6211b340247f11ba85e2d11d2c8)
+        ;
+
+        
+    
+    
+            var marker_6e5cd1654a95972cc1d0e5ab9fbc07df = L.marker(
+                [44.605, 4.156],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_6e5cd1654a95972cc1d0e5ab9fbc07df.setIcon(numeroIcon(6, "orange"));
+        
+    
+        var popup_45a3700e478cd52bcc6dc49560ac9982 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e1eabd52f754fb1278b29e6eaa87f843 = $(`<div id="html_e1eabd52f754fb1278b29e6eaa87f843" style="width: 100.0%; height: 100.0%;">Gîte 6 – Arlempdes (43)</div>`)[0];
+            popup_45a3700e478cd52bcc6dc49560ac9982.setContent(html_e1eabd52f754fb1278b29e6eaa87f843);
+        
+
+        marker_6e5cd1654a95972cc1d0e5ab9fbc07df.bindPopup(popup_45a3700e478cd52bcc6dc49560ac9982)
+        ;
+
+        
+    
+    
+            var marker_073167db670aabee3a881570c1b7b7b2 = L.marker(
+                [45.675, 3.742],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_073167db670aabee3a881570c1b7b7b2.setIcon(numeroIcon(7, "blue"));
+        
+    
+        var popup_a47d8db1b3cfba01cef3ee38965e8918 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bb655414aaf2c8d977cfcbdb9e7f5f2c = $(`<div id="html_bb655414aaf2c8d977cfcbdb9e7f5f2c" style="width: 100.0%; height: 100.0%;">Gîte 7 – St-Pierre-la-Bourlhonne (63)</div>`)[0];
+            popup_a47d8db1b3cfba01cef3ee38965e8918.setContent(html_bb655414aaf2c8d977cfcbdb9e7f5f2c);
+        
+
+        marker_073167db670aabee3a881570c1b7b7b2.bindPopup(popup_a47d8db1b3cfba01cef3ee38965e8918)
+        ;
+
+        
+    
+    
+            var marker_c2179c48b406205c9f4d99fa93bd025f = L.marker(
+                [45.78583, 3.60139],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_c2179c48b406205c9f4d99fa93bd025f.setIcon(numeroIcon(8, "blue"));
+        
+    
+        var popup_e9fceea59cba1b2aa3dc781c9b5108fa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8a4db88b015ba6a9e036f111ea4583c6 = $(`<div id="html_8a4db88b015ba6a9e036f111ea4583c6" style="width: 100.0%; height: 100.0%;">Gîte 8 – Vollore-Ville (63)</div>`)[0];
+            popup_e9fceea59cba1b2aa3dc781c9b5108fa.setContent(html_8a4db88b015ba6a9e036f111ea4583c6);
+        
+
+        marker_c2179c48b406205c9f4d99fa93bd025f.bindPopup(popup_e9fceea59cba1b2aa3dc781c9b5108fa)
+        ;
+
+        
+    
+    
+            var marker_b5c2c28e1ad82ee7b0c65d70c0270880 = L.marker(
+                [45.8, 2.48333],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_b5c2c28e1ad82ee7b0c65d70c0270880.setIcon(numeroIcon(9, "blue"));
+        
+    
+        var popup_f77f6f314c739bdf051c3a6fe44e6c18 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_61e8861a870cf2fa3fda72ec4e90b494 = $(`<div id="html_61e8861a870cf2fa3fda72ec4e90b494" style="width: 100.0%; height: 100.0%;">Gîte 9 – Giat (63)</div>`)[0];
+            popup_f77f6f314c739bdf051c3a6fe44e6c18.setContent(html_61e8861a870cf2fa3fda72ec4e90b494);
+        
+
+        marker_b5c2c28e1ad82ee7b0c65d70c0270880.bindPopup(popup_f77f6f314c739bdf051c3a6fe44e6c18)
+        ;
+
+        
+    
+    
+            var marker_0e6c32dc1141b14001fdd40d620d75cd = L.marker(
+                [45.647, 2.909],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_0e6c32dc1141b14001fdd40d620d75cd.setIcon(numeroIcon(10, "blue"));
+        
+    
+        var popup_b68e20d05d53f1be6db3587eaba7b2d4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b6439ee1c40c60d658b5e874d4d2748a = $(`<div id="html_b6439ee1c40c60d658b5e874d4d2748a" style="width: 100.0%; height: 100.0%;">Gîte 10 – Gelles (63)</div>`)[0];
+            popup_b68e20d05d53f1be6db3587eaba7b2d4.setContent(html_b6439ee1c40c60d658b5e874d4d2748a);
+        
+
+        marker_0e6c32dc1141b14001fdd40d620d75cd.bindPopup(popup_b68e20d05d53f1be6db3587eaba7b2d4)
+        ;
+
+        
+    
+    
+            var marker_864a93d483d270151f2afe19d464cfba = L.marker(
+                [45.603, 3.464],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_864a93d483d270151f2afe19d464cfba.setIcon(numeroIcon(11, "blue"));
+        
+    
+        var popup_dc86be8f267ebc477872afef7a92073f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_237e378817e12b87d08c48e77f8604ca = $(`<div id="html_237e378817e12b87d08c48e77f8604ca" style="width: 100.0%; height: 100.0%;">Gîte 11 – St-Pierre-Roche (63)</div>`)[0];
+            popup_dc86be8f267ebc477872afef7a92073f.setContent(html_237e378817e12b87d08c48e77f8604ca);
+        
+
+        marker_864a93d483d270151f2afe19d464cfba.bindPopup(popup_dc86be8f267ebc477872afef7a92073f)
+        ;
+
+        
+    
+    
+            var marker_fa130de4867736ef79c7afe297427025 = L.marker(
+                [45.158, 2.629],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_fa130de4867736ef79c7afe297427025.setIcon(numeroIcon(12, "green"));
+        
+    
+        var popup_0ae5cef99928b5afa73135c1d4ddf52a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7cc0823d056f7c2b23cf0b53585bfff6 = $(`<div id="html_7cc0823d056f7c2b23cf0b53585bfff6" style="width: 100.0%; height: 100.0%;">Gîte 12 – Vic-sur-Cère (15)</div>`)[0];
+            popup_0ae5cef99928b5afa73135c1d4ddf52a.setContent(html_7cc0823d056f7c2b23cf0b53585bfff6);
+        
+
+        marker_fa130de4867736ef79c7afe297427025.bindPopup(popup_0ae5cef99928b5afa73135c1d4ddf52a)
+        ;
+
+        
+    
+    
+            var marker_6cb3a2df0dc8188c257eca6ef6695bf8 = L.marker(
+                [45.5114, 2.93353],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_6cb3a2df0dc8188c257eca6ef6695bf8.setIcon(numeroIcon(13, "blue"));
+        
+    
+        var popup_324ce4ffad354f3383a2a79dd44bba1a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_04454c9d044314608e6c8aa48bb8abb1 = $(`<div id="html_04454c9d044314608e6c8aa48bb8abb1" style="width: 100.0%; height: 100.0%;">Gîte 13 – Besse-et-St-Anastaise (63)</div>`)[0];
+            popup_324ce4ffad354f3383a2a79dd44bba1a.setContent(html_04454c9d044314608e6c8aa48bb8abb1);
+        
+
+        marker_6cb3a2df0dc8188c257eca6ef6695bf8.bindPopup(popup_324ce4ffad354f3383a2a79dd44bba1a)
+        ;
+
+        
+    
+    
+            var marker_593cf33a05633bdd87ceff4f0ad2d794 = L.marker(
+                [45.391, 3.132],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_593cf33a05633bdd87ceff4f0ad2d794.setIcon(numeroIcon(14, "blue"));
+        
+    
+        var popup_9660a2d8eec2d1d7d6a8101f81d0dc79 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7a4637cf2ec8837afad2bb286ae1ae48 = $(`<div id="html_7a4637cf2ec8837afad2bb286ae1ae48" style="width: 100.0%; height: 100.0%;">Gîte 14 – Saint-Saturnin (63)</div>`)[0];
+            popup_9660a2d8eec2d1d7d6a8101f81d0dc79.setContent(html_7a4637cf2ec8837afad2bb286ae1ae48);
+        
+
+        marker_593cf33a05633bdd87ceff4f0ad2d794.bindPopup(popup_9660a2d8eec2d1d7d6a8101f81d0dc79)
+        ;
+
+        
+    
+    
+            var marker_6719d0fa18a3ab052d616f13aa6a0234 = L.marker(
+                [45.5667, 2.9],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_6719d0fa18a3ab052d616f13aa6a0234.setIcon(numeroIcon(15, "blue"));
+        
+    
+        var popup_f031764f57a3b6d75df396714a7822f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3e78a8c97753fb6972414bd5592fbc7e = $(`<div id="html_3e78a8c97753fb6972414bd5592fbc7e" style="width: 100.0%; height: 100.0%;">Gîte 15 – Murol / Lac Chambon (63)</div>`)[0];
+            popup_f031764f57a3b6d75df396714a7822f8.setContent(html_3e78a8c97753fb6972414bd5592fbc7e);
+        
+
+        marker_6719d0fa18a3ab052d616f13aa6a0234.bindPopup(popup_f031764f57a3b6d75df396714a7822f8)
+        ;
+
+        
+    
+    
+            var marker_f1959ce1047b1817eae9525aef9e7c92 = L.marker(
+                [45.5667, 2.9197],
+                {}
+            ).addTo(feature_group_fdd8173360c8a39265bca94dd273b2b3);
+        
+    
+            marker_f1959ce1047b1817eae9525aef9e7c92.setIcon(numeroIcon(16, "blue"));
+        
+    
+        var popup_9b2751a42c2d40c20250bc726dae8604 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bdd14a69636887e536d5bc32659ba439 = $(`<div id="html_bdd14a69636887e536d5bc32659ba439" style="width: 100.0%; height: 100.0%;">Gîte 16 – Chambon-sur-Lac (63)</div>`)[0];
+            popup_9b2751a42c2d40c20250bc726dae8604.setContent(html_bdd14a69636887e536d5bc32659ba439);
+        
+
+        marker_f1959ce1047b1817eae9525aef9e7c92.bindPopup(popup_9b2751a42c2d40c20250bc726dae8604)
+        ;
+
+        
+    
+    
+            var feature_group_0d687c94e6ddc88807e6e131a5f0e5a2 = L.featureGroup(
+                {}
+            ).addTo(map_68aa9f95a90180762b8ebc7ebf5d88b8);
+        
+    
+            var marker_bebe517f887f0e80e0e3199b9b0d237d = L.marker(
+                [45.664, 2.9845],
+                {}
+            ).addTo(feature_group_0d687c94e6ddc88807e6e131a5f0e5a2);
+        
+    
+            var icon_3de2cf26def193933335a81a29c9edc6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_bebe517f887f0e80e0e3199b9b0d237d.setIcon(icon_3de2cf26def193933335a81a29c9edc6);
+        
+    
+        var popup_86f26dcad81254bf75169e630376677b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c42f7b21551dacd0551ea42259acdfe = $(`<div id="html_7c42f7b21551dacd0551ea42259acdfe" style="width: 100.0%; height: 100.0%;">Lac d'Aydat</div>`)[0];
+            popup_86f26dcad81254bf75169e630376677b.setContent(html_7c42f7b21551dacd0551ea42259acdfe);
+        
+
+        marker_bebe517f887f0e80e0e3199b9b0d237d.bindPopup(popup_86f26dcad81254bf75169e630376677b)
+        ;
+
+        
+    
+    
+            var marker_2f6bdec6dc2a35b2999a3db04c928da5 = L.marker(
+                [45.5688, 2.9197],
+                {}
+            ).addTo(feature_group_0d687c94e6ddc88807e6e131a5f0e5a2);
+        
+    
+            var icon_51f4e84e476fbc3e87b6cad9c64b720b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_2f6bdec6dc2a35b2999a3db04c928da5.setIcon(icon_51f4e84e476fbc3e87b6cad9c64b720b);
+        
+    
+        var popup_6205cf8a308e8321f839ea50d696c889 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_13a44114293ee56e113722def5f0477e = $(`<div id="html_13a44114293ee56e113722def5f0477e" style="width: 100.0%; height: 100.0%;">Lac Chambon</div>`)[0];
+            popup_6205cf8a308e8321f839ea50d696c889.setContent(html_13a44114293ee56e113722def5f0477e);
+        
+
+        marker_2f6bdec6dc2a35b2999a3db04c928da5.bindPopup(popup_6205cf8a308e8321f839ea50d696c889)
+        ;
+
+        
+    
+    
+            var marker_95cb395d25da0bab4450183c18026c62 = L.marker(
+                [45.77237, 2.96411],
+                {}
+            ).addTo(feature_group_0d687c94e6ddc88807e6e131a5f0e5a2);
+        
+    
+            var icon_2d030170df1cc0e4f5b8306f5f0cda74 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_95cb395d25da0bab4450183c18026c62.setIcon(icon_2d030170df1cc0e4f5b8306f5f0cda74);
+        
+    
+        var popup_83ff8c1d651b5c20d49896e0cd33ae6c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_31060378f83c557cac71b3e6947ae906 = $(`<div id="html_31060378f83c557cac71b3e6947ae906" style="width: 100.0%; height: 100.0%;">Puy de Dôme</div>`)[0];
+            popup_83ff8c1d651b5c20d49896e0cd33ae6c.setContent(html_31060378f83c557cac71b3e6947ae906);
+        
+
+        marker_95cb395d25da0bab4450183c18026c62.bindPopup(popup_83ff8c1d651b5c20d49896e0cd33ae6c)
+        ;
+
+        
+    
+    
+            var marker_62710c07637e7c8b5266c6c91c4442e3 = L.marker(
+                [45.059, 2.8849],
+                {}
+            ).addTo(feature_group_0d687c94e6ddc88807e6e131a5f0e5a2);
+        
+    
+            var icon_757af07d5adb1d3f369a9160da4ab1cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_62710c07637e7c8b5266c6c91c4442e3.setIcon(icon_757af07d5adb1d3f369a9160da4ab1cb);
+        
+    
+        var popup_07e1eb2b86245caba09def9dbc283124 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f3ffa105890b86c70ff24c7b5e9208f3 = $(`<div id="html_f3ffa105890b86c70ff24c7b5e9208f3" style="width: 100.0%; height: 100.0%;">Plomb du Cantal</div>`)[0];
+            popup_07e1eb2b86245caba09def9dbc283124.setContent(html_f3ffa105890b86c70ff24c7b5e9208f3);
+        
+
+        marker_62710c07637e7c8b5266c6c91c4442e3.bindPopup(popup_07e1eb2b86245caba09def9dbc283124)
+        ;
+
+        
+    
+    
+            var layer_control_c17c04061d7dd6b7f8580fb0cac2d9e5 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_3e13c2e08263172cf895cc9ae610ab0f,
+                },
+                overlays :  {
+                    "G\u00eetes" : feature_group_fdd8173360c8a39265bca94dd273b2b3,
+                    "Centres d\u0027int\u00e9r\u00eat" : feature_group_0d687c94e6ddc88807e6e131a5f0e5a2,
+                },
+            };
+            L.control.layers(
+                layer_control_c17c04061d7dd6b7f8580fb0cac2d9e5.base_layers,
+                layer_control_c17c04061d7dd6b7f8580fb0cac2d9e5.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_68aa9f95a90180762b8ebc7ebf5d88b8);
+        
+</script>
+</html>
